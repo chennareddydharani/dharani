@@ -1,0 +1,6 @@
+def apply_median_filter(image_path, kernel_size=5):
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    median = cv2.medianBlur(image, kernel_size)
+    plt.imshow(median, cmap='gray')
+    plt.axis("off")
+    plt.show()
