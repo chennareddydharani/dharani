@@ -1,0 +1,6 @@
+def image_negative(image_path):
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    negative = 255 - image
+    plt.imshow(negative, cmap='gray')
+    plt.axis("off")
+    plt.show()
