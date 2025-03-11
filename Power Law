@@ -1,0 +1,6 @@
+def power_law(image_path, gamma=1.0):
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    power_image = np.array(255 * (image / 255) ** gamma, dtype=np.uint8)
+    plt.imshow(power_image, cmap='gray')
+    plt.axis("off")
+    plt.show()
