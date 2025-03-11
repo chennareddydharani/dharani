@@ -1,0 +1,6 @@
+def intensity_level_slicing(image_path, min_range, max_range):
+    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    sliced = np.where((image >= min_range) & (image <= max_range), 255, 0)
+    plt.imshow(sliced, cmap='gray')
+    plt.axis("off")
+    plt.show()
