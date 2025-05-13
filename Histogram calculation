@@ -1,5 +1,26 @@
-def histogram_calculation(image_path):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+import cv2
+import matplotlib.pyplot as plt
+
+def calculate_histogram(image):
     hist = cv2.calcHist([image], [0], None, [256], [0, 256])
+    plt.figure()
+    plt.title("Grayscale Histogram")
+    plt.xlabel("Pixel value")
+    plt.ylabel("Frequency")
     plt.plot(hist)
+    plt.xlim([0, 256])
     plt.show()
+def equalize_histogram(image):
+    return cv2.equalizeHist(image)
+img = cv2.imread('image.jpg', 0)  
+cv2.imshow('Original Image', img)
+
+calculate_histogram(img)
+
+equalized = equalize_histogram(img)
+cv2.imshow('Equalized Image', equalized)
+
+calculate_histogram(equalized)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
