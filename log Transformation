@@ -1,7 +1,12 @@
-def log_transformation(image_path, c=1):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    log_image = c * (np.log1p(image))
-    log_image = np.array((log_image / log_image.max()) * 255, dtype=np.uint8)
-    plt.imshow(log_image, cmap='gray')
-    plt.axis("off")
-    plt.show()
+import numpy as np
+
+img = cv2.imread('image.jpg', 0)  # Grayscale
+
+# Convert image to float and apply log transform
+img_float = np.float32(img)
+log_transformed = cv2.normalize(np.log1p(img_float), None, 0, 255, cv2.NORM_MINMAX)
+log_transformed = np.uint8(log_transformed)
+
+cv2.imshow('Original', img)
+cv2.imshow('Log Transformed', log_transformed)
+cv2.waitKey(0)
