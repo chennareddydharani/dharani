@@ -1,6 +1,14 @@
-def intensity_level_slicing(image_path, min_range, max_range):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    sliced = np.where((image >= min_range) & (image <= max_range), 255, 0)
-    plt.imshow(sliced, cmap='gray')
-    plt.axis("off")
-    plt.show()
+import cv2
+import numpy as np
+
+img = cv2.imread('image.jpg', 0)
+
+# Example: highlight intensities between 100 and 200
+sliced = np.zeros_like(img)
+sliced[(img > 100) & (img < 200)] = 255
+
+cv2.imshow('Original', img)
+cv2.imshow('Intensity Slicing', sliced)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
