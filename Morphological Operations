@@ -1,14 +1,18 @@
-def morphological_operations(image_path, operation):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    kernel = np.ones((5,5), np.uint8)
-    if operation == 'dilation':
-        processed = cv2.dilate(image, kernel, iterations=1)
-    elif operation == 'erosion':
-        processed = cv2.erode(image, kernel, iterations=1)
-    elif operation == 'opening':
-        processed = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
-    elif operation == 'closing':
-        processed = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
-    plt.imshow(processed, cmap='gray')
-    plt.axis("off")
-    plt.show()
+import cv2
+import numpy as np
+
+image = cv2.imread('image.jpg', 0)
+_, binary = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+kernel = np.ones((5,5), np.uint8)
+
+dilation = cv2.dilate(binary, kernel, iterations = 1)
+erosion = cv2.erode(binary, kernel, iterations = 1)
+opening = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
+closing = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
+
+cv2.imshow('Dilation', dilation)
+cv2.imshow('Erosion', erosion)
+cv2.imshow('Opening', opening)
+cv2.imshow('Closing', closing)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
