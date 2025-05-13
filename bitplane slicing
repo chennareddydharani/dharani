@@ -1,6 +1,13 @@
-def bit_plane_slicing(image_path, bit_plane):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    bit_sliced = (image & (1 << bit_plane)) >> bit_plane
-    plt.imshow(bit_sliced * 255, cmap='gray')
-    plt.axis("off")
-    plt.show()
+import cv2
+import numpy as np
+
+img = cv2.imread('image.jpg', 0)
+
+# Create 8 separate images for each bit plane
+bit_planes = [((img >> i) & 1) * 255 for i in range(8)]
+
+for i, bp in enumerate(bit_planes):
+    cv2.imshow(f'Bit Plane {i}', bp)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
