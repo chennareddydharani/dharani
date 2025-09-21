@@ -1,0 +1,33 @@
+import java.math.BigInteger;
+
+public class RSA {
+    public static void main(String[] args) {
+        // Small primes for demo
+        BigInteger p = BigInteger.valueOf(3);
+        BigInteger q = BigInteger.valueOf(11);
+        BigInteger n = p.multiply(q);
+        BigInteger phi = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
+
+        // Choose e such that 1 < e < phi and gcd(e, phi) = 1
+        BigInteger e = BigInteger.valueOf(2);
+        while (!e.gcd(phi).equals(BigInteger.ONE)) e = e.add(BigInteger.ONE);
+
+        // Compute d = e^(-1) mod phi
+        BigInteger d = e.modInverse(phi);
+
+        System.out.println("Public Key (e, n): (" + e + ", " + n + ")");
+        System.out.println("Private Key (d, n): (" + d + ", " + n + ")");
+
+        // Message
+        BigInteger M = BigInteger.valueOf(31);
+        System.out.println("Original Message: " + M);
+
+        // Encrypt: C = M^e mod n
+        BigInteger C = M.modPow(e, n);
+        System.out.println("Encrypted Message: " + C);
+
+        // Decrypt: M = C^d mod n
+        BigInteger decrypted = C.modPow(d, n);
+        System.out.println("Decrypted Message: " + decrypted);
+    }
+}
