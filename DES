@@ -8,15 +8,13 @@ public class SimpleDES {
         DESKeySpec kspec=new DESKeySpec("12345678".getBytes());
         SecretKey key=SecretKeyFactory.getInstance("DES").generateSecret(kspec);
         Cipher c=Cipher.getInstance("DES/ECB/PKCS5Padding");
-        
-        // Encryption
+
         c.init(Cipher.ENCRYPT_MODE,key);
         String enc=Base64.getEncoder().encodeToString(c.doFinal(msg.getBytes()));
-        
-        // Decryption
+
         c.init(Cipher.DECRYPT_MODE,key);
         String dec=new String(c.doFinal(Base64.getDecoder().decode(enc)));
-        
+
         System.out.println("Original: "+msg);
         System.out.println("Encrypted: "+enc);
         System.out.println("Decrypted: "+dec);
