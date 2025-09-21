@@ -2,7 +2,6 @@ public class RC4 {
     private int[] S = new int[256];
     private int i, j;
 
-    // Key Scheduling Algorithm (KSA)
     public RC4(byte[] key) {
         for (i = 0; i < 256; i++) S[i] = i;
         j = 0;
@@ -13,7 +12,6 @@ public class RC4 {
         i = j = 0;
     }
 
-    // Pseudo-Random Generation Algorithm (PRGA)
     public byte getByte() {
         i = (i + 1) & 0xFF;
         j = (j + S[i]) & 0xFF;
@@ -21,7 +19,6 @@ public class RC4 {
         return (byte) S[(S[i] + S[j]) & 0xFF];
     }
 
-    // Encrypt/Decrypt (same operation)
     public byte[] encryptDecrypt(byte[] data) {
         byte[] result = new byte[data.length];
         for (int k = 0; k < data.length; k++)
@@ -43,3 +40,4 @@ public class RC4 {
         System.out.println("Decrypted: " + new String(decrypted));
     }
 }
+
