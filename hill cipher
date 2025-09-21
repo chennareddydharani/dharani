@@ -1,9 +1,9 @@
 class HillShort {
     public static void main(String[] a) {
-        int[][] key={{3,3},{2,5}}; // fixed key
+        int[][] key={{3,3},{2,5}};
         String msg="HI";
         msg=msg.toUpperCase();
-        if(msg.length()%2!=0) msg+="X"; // padding
+        if(msg.length()%2!=0) msg+="X";
         String res="";
         for(int i=0;i<msg.length();i+=2){
             int c1=msg.charAt(i)-'A', c2=msg.charAt(i+1)-'A';
@@ -15,3 +15,4 @@ class HillShort {
         System.out.println("Cipher: "+res);
     }
 }
+
