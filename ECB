@@ -7,14 +7,12 @@ public class ECB {
     public static void main(String[] args) throws Exception {
         String text = "Hey I am CNS!!";
 
-        SecretKey key = KeyGenerator.getInstance("AES").generateKey(); // 128-bit AES key
+        SecretKey key = KeyGenerator.getInstance("AES").generateKey();
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 
-        // Encryption
         cipher.init(Cipher.ENCRYPT_MODE, key);
         String encrypted = Base64.getEncoder().encodeToString(cipher.doFinal(text.getBytes()));
 
-        // Decryption
         cipher.init(Cipher.DECRYPT_MODE, key);
         String decrypted = new String(cipher.doFinal(Base64.getDecoder().decode(encrypted)));
 
@@ -23,3 +21,4 @@ public class ECB {
         System.out.println("Decrypted Text: " + decrypted);
     }
 }
+
