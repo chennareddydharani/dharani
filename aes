@@ -4,17 +4,15 @@ import java.util.Base64;
 
 public class SimpleAES {
     public static void main(String[] args) throws Exception {
-        String msg = "Hello GNITS!";                  // Input message
-        String key = "1234567890123456";              // 16-byte key for AES-128
+        String msg = "Hello GNITS!";
+        String key = "1234567890123456";
 
         SecretKeySpec skey = new SecretKeySpec(key.getBytes(), "AES");
         Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
 
-        // Encryption
         cipher.init(Cipher.ENCRYPT_MODE, skey);
         String enc = Base64.getEncoder().encodeToString(cipher.doFinal(msg.getBytes()));
 
-        // Decryption
         cipher.init(Cipher.DECRYPT_MODE, skey);
         String dec = new String(cipher.doFinal(Base64.getDecoder().decode(enc)));
 
