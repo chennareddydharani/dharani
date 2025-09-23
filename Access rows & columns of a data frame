@@ -1,0 +1,4 @@
+print(students[1, ])
+print(students[, 2])
+print(students[2, 3])
+
