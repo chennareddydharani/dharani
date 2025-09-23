@@ -1,0 +1,7 @@
+df <- data.frame(
+  ID = c(1, 2, 2, 3),
+  Score = c(90, NA, 85, 90)
+)
+df <- na.omit(df)
+df <- df[!duplicated(df), ]
+print(df)

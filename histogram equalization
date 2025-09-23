@@ -1,6 +1,0 @@
-def histogram_equalization(image_path):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    equalized = cv2.equalizeHist(image)
-    plt.imshow(equalized, cmap='gray')
-    plt.axis("off")
-    plt.show()
