@@ -1,0 +1,11 @@
+x <- 7
+y <- 3
+cat("x > y:", x > y, "\n")
+cat("x == y:", x == y, "\n")
+cat("x != y:", x != y, "\n")
+
+a <- TRUE
+b <- FALSE
+cat("a & b:", a & b, "\n")
+cat("a | b:", a | b, "\n")
+cat("!a:", !a, "\n")
