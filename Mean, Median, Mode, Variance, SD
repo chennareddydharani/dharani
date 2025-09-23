@@ -1,0 +1,11 @@
+v <- c(2, 4, 4, 6, 8, 8, 8, 10)
+mean_val <- mean(v)
+median_val <- median(v)
+mode_val <- names(sort(table(v), decreasing = TRUE))[1]
+variance_val <- var(v)
+sd_val <- sd(v)
+cat("Mean:", mean_val, "\n")
+cat("Median:", median_val, "\n")
+cat("Mode:", mode_val, "\n")
+cat("Variance:", variance_val, "\n")
+cat("Standard Deviation:", sd_val, "\n")
