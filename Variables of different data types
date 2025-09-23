@@ -1,0 +1,9 @@
+num_var <- 42
+char_var <- "Hello R"
+log_var <- TRUE
+complex_var <- 2 + 3i
+
+print(num_var)
+print(char_var)
+print(log_var)
+print(complex_var)
