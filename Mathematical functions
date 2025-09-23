@@ -1,0 +1,6 @@
+n <- 5
+cat("Square root:", sqrt(n), "\n")
+cat("Logarithm:", log(n), "\n")
+cat("Exponential:", exp(n), "\n")
+cat("Factorial:", factorial(n), "\n")
+
