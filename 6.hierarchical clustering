@@ -1,0 +1,7 @@
+import numpy as np
+from scipy.cluster.hierarchy import linkage, dendrogram
+import matplotlib.pyplot as plt
+
+data = np.random.rand(10,2)
+dendrogram(linkage(data, method='ward'))
+plt.show()
