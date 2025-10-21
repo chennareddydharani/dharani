@@ -1,6 +1,0 @@
-mat <- matrix(1:9, nrow = 3, ncol = 3)
-print(mat)
-cat("Transpose:\n")
-print(t(mat))
-cat("Row sum:", rowSums(mat), "\n")
-cat("Column sum:", colSums(mat), "\n")
