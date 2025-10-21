@@ -1,0 +1,6 @@
+from sklearn.datasets import fetch_openml
+from scipy.spatial import distance
+
+mtcars = fetch_openml(name='mtcars', version=1).frame
+a, b = mtcars.loc[0], mtcars.loc[1]
+print(distance.euclidean(a,b))
