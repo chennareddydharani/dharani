@@ -1,5 +1,0 @@
-library(readxl)
-data <- read_excel("data.xlsx")
-head(data)
-
-
