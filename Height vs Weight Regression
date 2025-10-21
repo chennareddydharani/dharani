@@ -1,0 +1,9 @@
+import numpy as np, matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+h = np.array([150,155,160,165,170,175,180]).reshape(-1,1)
+w = np.array([50,52,54,58,63,68,72])
+m = LinearRegression().fit(h,w)
+print("Weight for 172cm:", m.predict([[172]]))
+plt.scatter(h,w); plt.plot(h,m.predict(h),color='red'); plt.show()
+
