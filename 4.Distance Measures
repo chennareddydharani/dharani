@@ -1,7 +1,7 @@
-df <- data.frame(
-  ID = c(1, 2, 2, 3),
-  Score = c(90, NA, 85, 90)
-)
-df <- na.omit(df)
-df <- df[!duplicated(df), ]
-print(df)
+import numpy as np
+from scipy.spatial import distance
+
+a, b = np.array([1,2,3]), np.array([4,5,6])
+print(distance.euclidean(a,b))
+print(distance.cityblock(a,b))
+print(distance.minkowski(a,b,3))
