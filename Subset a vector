@@ -1,4 +1,0 @@
-vec <- c(5, 10, 15, 20, 25)
-subset_vec <- subset(vec, vec > 15)
-print(subset_vec)
-
