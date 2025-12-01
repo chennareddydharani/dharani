@@ -1,6 +1,0 @@
-summary(students)
-str(students)
-df1 <- data.frame(ID=1:2, Marks=c(85, 90))
-df2 <- data.frame(ID=1:2, Grade=c("A", "B"))
-merged_df <- merge(df1, df2, by="ID")
-print(merged_df)
