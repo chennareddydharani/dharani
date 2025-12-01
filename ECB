@@ -1,0 +1,22 @@
+import javax.crypto.*;
+import java.util.Base64;
+
+public class ECBMode {
+    public static void main(String[] args) throws Exception {
+        KeyGenerator kg = KeyGenerator.getInstance("AES");
+        kg.init(128);
+        SecretKey key = kg.generateKey();
+
+        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+
+        String text = "HELLOWORLD";
+
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+        byte[] enc = cipher.doFinal(text.getBytes());
+        cipher.init(Cipher.DECRYPT_MODE, key);
+        byte[] dec = cipher.doFinal(enc);
+
+        System.out.println("ECB Encrypted: " + Base64.getEncoder().encodeToString(enc));
+        System.out.println("ECB Decrypted: " + new String(dec));
+    }
+}
