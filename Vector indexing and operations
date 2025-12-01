@@ -1,6 +1,0 @@
-vec <- c(10, 20, 30, 40, 50)
-print(vec[1])
-print(vec[2:4])
-print(vec[-3])
-print(vec * 2)
-print(sum(vec))
