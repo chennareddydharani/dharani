@@ -1,9 +1,0 @@
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-
-df = pd.DataFrame({'Age':[22,25,47,52,46,56],
-                   'Salary':[20000,25000,50000,52000,49000,60000],
-                   'Purchased':[0,0,1,1,1,1]})
-x = df[['Age','Salary']]; y = df['Purchased']
-model = LogisticRegression().fit(x,y)
-print(model.predict([[30,40000]]))
