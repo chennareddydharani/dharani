@@ -1,6 +1,0 @@
-import pandas as pd
-from statsmodels.tsa.seasonal import seasonal_decompose
-
-data = pd.Series([10,12,13,15,14,18,20,22,21,25,27,30])
-result = seasonal_decompose(data, period=4)
-result.plot()
