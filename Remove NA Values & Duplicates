@@ -1,0 +1,10 @@
+df <- data.frame(
+  a = c(1, 2, NA, 2),
+  b = c(3, NA, 3, 3)
+)
+
+clean1 <- na.omit(df)
+clean2 <- unique(df)
+
+print(clean1)
+print(clean2)
