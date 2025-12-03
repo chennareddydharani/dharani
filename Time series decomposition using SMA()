@@ -1,0 +1,7 @@
+library(TTR)
+data <- ts(c(10,12,15,18,20,22,25,27,30,28,24,20,
+             12,14,17,19,23,25,28,29,31,27,23,21),
+           frequency=12)
+sma <- SMA(data, n=3)
+plot(data, type="l")
+lines(sma, lwd=2)
