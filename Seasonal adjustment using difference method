@@ -1,0 +1,3 @@
+data <- ts(c(120,130,140,150,160,170,180,190,200,210,220,230), frequency=12)
+diffdata <- diff(data, differences=1)
+plot(diffdata)
