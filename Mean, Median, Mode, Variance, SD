@@ -1,0 +1,13 @@
+v <- c(2, 4, 6, 8, 8)
+
+mean_val <- mean(v)
+median_val <- median(v)
+mode_val <- names(sort(table(v), decreasing = TRUE))[1]
+var_val <- var(v)
+sd_val <- sd(v)
+
+print(mean_val)
+print(median_val)
+print(mode_val)
+print(var_val)
+print(sd_val)
