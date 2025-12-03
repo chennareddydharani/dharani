@@ -1,0 +1,3 @@
+values <- scan()
+tsdata <- ts(values, frequency=12)
+plot(tsdata)
