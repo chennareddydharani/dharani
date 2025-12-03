@@ -1,0 +1,4 @@
+m <- matrix(rnorm(16), nrow=4)
+km <- kmeans(m, centers=2)
+km
+plot(m, col=km$cluster, pch=19)
