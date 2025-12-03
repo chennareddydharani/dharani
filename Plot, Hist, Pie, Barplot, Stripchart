@@ -1,0 +1,7 @@
+x <- 1:5
+y <- c(2,4,6,8,10)
+plot(x, y)
+hist(y)
+pie(y)
+barplot(y)
+stripchart(y, method="stack")
