@@ -1,0 +1,3 @@
+print(students[1, ])       # first row
+print(students[, 2])       # second column
+print(students[2, 3])      # element at row2 col3
