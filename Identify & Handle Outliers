@@ -1,0 +1,6 @@
+v <- c(10, 12, 11, 200, 13)
+
+boxplot(v)       # visualize
+
+clean_v <- v[v < 100]   # simple removal
+print(clean_v)
