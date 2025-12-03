@@ -1,0 +1,8 @@
+# Different Data Types
+num_var <- 25
+char_var <- "Hello R"
+log_var <- TRUE
+
+print(num_var)
+print(char_var)
+print(log_var)
