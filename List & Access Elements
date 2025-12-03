@@ -1,0 +1,8 @@
+my_list <- list(
+  id = 101,
+  name = "Sneha",
+  marks = c(85, 90, 95)
+)
+
+print(my_list$name)
+print(my_list$marks)
