@@ -1,0 +1,8 @@
+students <- data.frame(
+  name = c("A", "B", "C"),
+  age = c(20, 21, 19),
+  marks = c(85, 90, 88)
+)
+
+print(students)
+summary(students)
