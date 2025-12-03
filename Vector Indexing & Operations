@@ -1,0 +1,7 @@
+v <- c(10, 20, 30, 40)
+
+print(v[1])        # first element
+print(v[2:3])      # elements 2 & 3
+
+print(v + 5)
+print(v * 2)
