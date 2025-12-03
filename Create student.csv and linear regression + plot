@@ -1,0 +1,9 @@
+student <- data.frame(
+  Hours=c(2,3,4,5,6,7,8,9,10,11),
+  Score=c(50,55,60,65,70,76,80,85,88,95)
+)
+write.csv(student,"student.csv",row.names=FALSE)
+model <- lm(Score ~ Hours, data=student)
+summary(model)
+plot(student$Hours, student$Score)
+abline(model)
