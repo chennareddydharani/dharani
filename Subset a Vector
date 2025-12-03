@@ -1,0 +1,3 @@
+v <- c(5, 10, 15, 20, 25)
+result <- subset(v, v > 15)
+print(result)
