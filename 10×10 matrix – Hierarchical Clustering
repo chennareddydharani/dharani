@@ -1,0 +1,5 @@
+set.seed(1)
+m <- matrix(rnorm(100), nrow=10)
+d <- dist(m)
+hc <- hclust(d)
+plot(hc)
