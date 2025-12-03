@@ -1,0 +1,4 @@
+library(readxl)
+
+data <- read_excel("sample.xlsx")
+head(data)
