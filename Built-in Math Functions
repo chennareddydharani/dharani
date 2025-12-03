@@ -1,0 +1,6 @@
+n <- 16
+
+print(sqrt(n))
+print(log(n))        # natural log
+print(exp(2))
+print(factorial(5))
