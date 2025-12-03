@@ -1,0 +1,3 @@
+data(mtcars)
+subset <- mtcars[c("Honda Civic","Camaro Z28"),]
+dist(subset, method="euclidean")
