@@ -1,0 +1,4 @@
+m <- matrix(1:16, nrow=4)
+dist(m, "euclidean")
+dist(m, "manhattan")
+dist(m, method="minkowski", p=3)
